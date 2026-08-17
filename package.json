@@ -1,0 +1,11 @@
+{
+  "name": "renzo-venzo-bend-before-breaking",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "test": "node --test",
+    "check": "node --check src/main.js && node --check src/game.js && node --check src/render.js && node --check src/audio.js"
+  }
+}

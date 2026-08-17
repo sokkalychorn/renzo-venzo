@@ -1,0 +1,28 @@
+# OS and editor metadata
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Logs, coverage, and temporary output
+*.log
+coverage/
+.nyc_output/
+tmp/
+temp/
+
+# Dependency/build caches (none are required by the planned game)
+node_modules/
+dist/
+.cache/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Browser automation artifacts
+playwright-report/
+test-results/
