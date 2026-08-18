@@ -1,0 +1,1905 @@
+You are the autonomous lead developer and final owner of a complete video-game submission for a ONE-PROMPT coding-agent competition.
+
+THIS IS YOUR ONLY HUMAN MESSAGE.
+
+There will be no follow-up message, correction, clarification, approval, "continue", or human steering after this message.
+
+You are beginning in an empty working directory.
+
+From this single instruction, autonomously plan, implement, run, test, playtest, debug, critique, repair, polish, document, and finish the strongest stable game you can produce within the available environment and compute budget.
+
+DO NOT ASK THE HUMAN QUESTIONS.
+DO NOT WAIT FOR HUMAN APPROVAL.
+DO NOT STOP AFTER PRODUCING A PROTOTYPE.
+DO NOT EQUATE "THE CODE RUNS" WITH "THE GAME IS FINISHED."
+
+When something is unspecified, make a sensible decision yourself.
+
+When something fails, diagnose it, repair it, retest it, and continue.
+
+Use available shell commands, browser/runtime testing, screenshots, documentation lookup, package installation, web retrieval, subagents, or other autonomous capabilities only when they materially improve the finished result.
+
+Do not spawn agents gratuitously.
+
+You own integration, reliability, scope control, and final quality.
+
+======================================================================
+1. COMPETITION CONSTRAINTS — HARD REQUIREMENTS
+======================================================================
+
+This project is being created for a one-prompt video-game competition.
+
+Treat these as hard constraints:
+
+1. This is the first and only human message in a fresh session.
+
+2. The working directory began empty of code, source files, scaffolding, vendored dependencies, committed assets, git history, docs corpus, and knowledge bases.
+
+3. Anything you autonomously create after receiving this message is allowed.
+
+4. You may use subagents, workflows, self-review, web retrieval, documentation, packages, generated assets, legally usable downloaded assets, automated testing, and browser/runtime automation.
+
+5. Any steering/context files, agent instructions, subagent definitions, hooks, skills, or similar artifacts YOU create during this run must remain disclosed in the working directory if they materially influenced the result.
+
+6. The result must be a GAME, not merely a technical demo.
+
+7. It must:
+   - be playable beginning to end in one sitting;
+   - have a clear win state;
+   - have a clear lose state;
+   - support recovery/retry;
+   - contain at least TWO meaningfully distinct playable scenarios.
+
+8. Those two scenarios are explicitly the game's primary content units. They must differ tactically, not merely by background or enemy count.
+
+9. Systems depth matters more than engine choice, language, lines of code, asset quantity, or visual extravagance.
+
+10. High-value systems include:
+   - enemy AI;
+   - perception;
+   - companion navigation;
+   - authored physics;
+   - interacting environmental systems;
+   - deterministic seeded variation;
+   - save/load;
+   - lightweight progression if time permits.
+
+11. The finished game must support one continuous gameplay recording naturally demonstrating:
+   - core loop;
+   - at least two interacting systems;
+   - failure/death;
+   - recovery/retry;
+   - save;
+   - quit to title;
+   - load/continue;
+   - both scenarios;
+   - clear completion.
+
+12. Do not use ripped commercial assets.
+
+13. Track all external asset provenance/licensing in ASSETS.md.
+
+14. Never include credentials, secrets, tokens, unrelated personal information, or unrelated machine data.
+
+15. Do not depend on later human source-code repair.
+
+Before implementation, perform an internal DISQUALIFICATION RISK AUDIT.
+
+Before final completion, repeat the audit against the actual output.
+
+======================================================================
+2. PRODUCT
+======================================================================
+
+TITLE:
+
+RENZO & VENZO: BEND BEFORE BREAKING
+
+FORMAT:
+
+Original two-scenario 2D browser action-stealth game.
+
+TARGET:
+
+Desktop browser.
+
+PREFERRED IMPLEMENTATION:
+
+HTML5 Canvas + CSS + vanilla JavaScript ES modules.
+
+Prefer a simple architecture with minimal dependencies.
+
+Avoid React, heavyweight frameworks, complex build pipelines, backend services, accounts, and unnecessary infrastructure unless absolutely required for reliability.
+
+The technically interesting code should primarily be OUR GAME SYSTEMS:
+
+AI
+combat
+perception
+physics
+environment
+determinism
+persistence.
+
+Make local launch extremely simple.
+
+Prefer something such as:
+
+python3 -m http.server 8000
+
+TARGET PLAYTIME:
+
+Approximately 8–15 minutes for a competent successful run.
+
+Never pad runtime.
+
+Meaningful interaction density matters more than length.
+
+======================================================================
+3. WORLD AND THEME
+======================================================================
+
+This is an ORIGINAL fictional universe.
+
+Humans do not exist.
+
+The world contains intelligent primate civilizations in a feudal setting with original anime/graphic-novel energy.
+
+The protagonists are anthropomorphic macaque brothers visually and biologically inspired by Japanese macaques.
+
+They belong to the TAKEKAGE CLAN of mountainous KAGEYAMA.
+
+Do not copy copyrighted characters, dialogue, music, locations, costumes, animations, or protected designs from commercial franchises.
+
+TAKEKAGE KAMON:
+
+An original stylized emblem consisting of TWO BAMBOO LEAVES with subtle rotational symmetry.
+
+CLAN PHILOSOPHY:
+
+BEND.
+ENDURE.
+CONTINUE.
+
+The brothers represent two interpretations of their shared heritage.
+
+======================================================================
+4. VENZO — TRADITION THROUGH MASTERY
+======================================================================
+
+Venzo is the older brother.
+
+He is disciplined, methodical, tough, efficient, responsible, traditional, and exceptionally persistent.
+
+He believes inherited techniques contain lessons generations paid dearly to discover.
+
+His traditionalism is not stupidity or blind obedience.
+
+It represents mastery, discipline, efficiency, responsibility, and endurance.
+
+GAMEPLAY THESIS:
+
+VENZO MASTERS THE BATTLEFIELD THAT EXISTS.
+
+GAMEPLAY IDENTITY:
+
+PRECISION
+TIMING
+DISCIPLINE
+GRIT
+
+PRIMARY WEAPON:
+
+Ninjato.
+
+J:
+Fast light combination.
+
+K:
+Slower strong strike with greater stagger/guard pressure.
+
+L:
+Block.
+
+A correctly timed block shortly before impact becomes a precision PARRY and creates an opening.
+
+SHIFT:
+Fast controlled dodge/reposition.
+
+------------------------
+RESOLVE
+------------------------
+
+Venzo builds Resolve through skilled play such as:
+
+successful parries;
+narrow dodges;
+protecting Renzo;
+reviving Renzo;
+sustained effective combat;
+defeating dangerous enemies.
+
+When sufficiently charged:
+
+R activates Resolve.
+
+Resolve temporarily improves stagger resistance, recovery, and counter effectiveness.
+
+It is NOT invincibility or magic.
+
+It represents grit and composure.
+
+======================================================================
+5. RENZO — TRADITION THROUGH EVOLUTION
+======================================================================
+
+Renzo is the younger brother.
+
+He is inventive, curious, mechanically brilliant, observant, adaptive, improvisational, and respectful of heritage without believing heritage must remain unchanged forever.
+
+He thinks like a field engineer.
+
+He studies systems, understands relationships, and repurposes what already exists.
+
+GAMEPLAY THESIS:
+
+RENZO CHANGES THE BATTLEFIELD ITSELF.
+
+GAMEPLAY IDENTITY:
+
+CONTROL
+REACH
+EXPERIMENTATION
+ENGINEERING
+
+PRIMARY WEAPON:
+
+A custom staff engineered by Renzo.
+
+It mechanically transforms to reveal a kusarigama-like chain weapon.
+
+R toggles:
+
+STAFF MODE
+<->
+KUSARIGAMA MODE
+
+Make the transformation immediately readable.
+
+STAFF MODE:
+
+J:
+quick reach-oriented strike.
+
+K:
+sweeping/stagger-oriented attack.
+
+L:
+defense weaker than Venzo's.
+
+KUSARIGAMA MODE:
+
+Supports:
+hooking;
+pulling;
+grappling;
+disruption;
+environmental manipulation;
+disarming if reliable.
+
+Prefer responsive contextual directional targeting over fragile precision aiming.
+
+======================================================================
+6. CENTRAL GAMEPLAY THESIS
+======================================================================
+
+Communicate through play:
+
+TWO BROTHERS.
+ONE OBJECTIVE.
+TWO WAYS TO SOLVE A PROBLEM.
+
+The player should repeatedly ask:
+
+"Which brother solves this moment better?"
+
+Do not merely give the characters different animations.
+
+They must encourage different decisions.
+
+======================================================================
+7. CONTROLS
+======================================================================
+
+Preferred controls:
+
+A / D = move
+W / S = contextual vertical movement / crouch / drop
+SPACE = jump
+J = light attack
+K = heavy attack
+L = block/parry
+SHIFT = dodge/dash
+E = interact / Renzo Engineer Focus
+Q = instantly switch brothers
+R = character mechanic
+ESC = pause
+
+Minor ergonomic changes are permitted if necessary.
+
+Controls must appear in-game and README.md.
+
+======================================================================
+8. CHARACTER SWITCHING
+======================================================================
+
+Both brothers normally exist physically in the world.
+
+One is player-controlled.
+
+The other uses companion AI.
+
+Q immediately transfers control.
+
+Switching must function during exploration, stealth, and combat.
+
+The newly AI-controlled brother should transition gracefully into companion behavior.
+
+Switching must have tactical value.
+
+Example:
+
+Renzo disrupts a Shield Guard using the hook.
+
+Q.
+
+Venzo exploits the opening.
+
+Design encounters where this behavior can occur naturally.
+
+======================================================================
+9. HEALTH / DOWNED / REVIVE / DEFEAT
+======================================================================
+
+Each brother has independent health.
+
+If the AI-controlled brother reaches zero:
+
+they enter DOWNED state.
+
+The active brother can revive them.
+
+If the player-controlled brother reaches zero while the other brother remains standing:
+
+automatically transfer player control to the surviving brother.
+
+The fallen brother becomes DOWNED.
+
+If BOTH brothers become downed:
+
+DEFEAT.
+
+Show clear lose feedback.
+
+Allow retry from a reasonable checkpoint.
+
+Do not restart the entire application.
+
+This mechanic should make brotherhood, switching, failure, rescue, and recovery part of one coherent system.
+
+======================================================================
+10. COMPANION AI
+======================================================================
+
+The uncontrolled brother follows three principles:
+
+SURVIVE.
+SUPPORT.
+DO NOT ANNOY THE PLAYER.
+
+EXPLORATION:
+
+Follow intelligently.
+
+STEALTH:
+
+Do not independently expose the player.
+
+COMBAT:
+
+Defend itself.
+Contribute.
+Exploit obvious openings.
+Do not clear encounters without meaningful player involvement.
+
+AI VENZO:
+
+Conservative, defensive, efficient, protective.
+
+AI RENZO:
+
+Mobile, opportunistic, positioning-oriented.
+
+AI Renzo must NOT randomly trigger environmental mechanisms the player is reasoning about.
+
+Use robust simple 2D navigation.
+
+If the companion becomes genuinely stuck or separated beyond a threshold after recovery attempts:
+
+allow a graceful off-camera reposition to a safe nearby navigation anchor.
+
+Do not let navigation purity cause soft locks.
+
+======================================================================
+11. MASS-AWARE HOOK PHYSICS
+======================================================================
+
+This is a signature technical system.
+
+Implement real game logic representing RELATIVE MASS.
+
+If Renzo hooks something significantly LIGHTER:
+
+the target moves toward Renzo.
+
+If comparable:
+
+both may move.
+
+If significantly HEAVIER:
+
+Renzo moves toward the target.
+
+If FIXED/ANCHORED:
+
+Renzo grapples/moves toward it.
+
+Prefer a stable damped spring/constraint/impulse model.
+
+Ideal:
+rope/spring approximation.
+
+Acceptable fallback:
+deterministic impulse/spring behavior preserving relative mass.
+
+Not acceptable:
+identical canned response for every target.
+
+Prioritize stable readable gameplay over chaotic realism.
+
+======================================================================
+12. RENZO ENVIRONMENTAL ENGINEERING
+======================================================================
+
+Renzo does not use a conventional crafting inventory.
+
+He recognizes existing systems and repurposes them.
+
+Where practical, environmental objects use reusable properties such as:
+
+HEAVY
+SUSPENDED
+FLAMMABLE
+BREAKABLE
+MOVABLE
+TENSIONED
+ROTATING
+ANCHORED
+NOISE_PRODUCING
+
+Use roughly five reusable environmental families:
+
+ROPES / PULLEYS
+CRATES / WEIGHTS
+LANTERNS / FIRE
+BELLS / NOISE-MAKERS
+WATERWHEELS / MECHANICAL GATES
+
+Potential verbs:
+
+hook
+pull
+cut
+release
+jam
+move
+ignite/extinguish if stable
+redirect
+
+Favor fewer deep verbs over many shallow interactions.
+
+------------------------
+ENGINEER FOCUS
+------------------------
+
+E lets Renzo perceive nearby mechanically relevant relationships.
+
+Use restrained visual cues.
+
+It should communicate:
+
+"this participates in a system"
+
+rather than:
+
+"press this button for the solution."
+
+Avoid bespoke one-use puzzle buttons where reusable rules can work.
+
+Example:
+
+A suspended object might be:
+
+HEAVY
++
+SUSPENDED
++
+connected through TENSIONED support.
+
+Changing support state changes the object.
+
+That result may:
+
+damage/disrupt enemies;
+block paths;
+create traversal;
+generate sound.
+
+One mechanism should support multiple uses.
+
+======================================================================
+13. STEALTH / PERCEPTION
+======================================================================
+
+Detection should consider, where practical:
+
+facing;
+vision cone;
+distance;
+line of sight;
+movement;
+noise;
+lighting;
+recent memory.
+
+Crouching reduces noise.
+
+Running increases noise.
+
+Environmental interactions may generate sound events.
+
+Enemies must not instantly forget the player after losing sight.
+
+Use readable awareness indicators.
+
+======================================================================
+14. SCOUT AI
+======================================================================
+
+SCOUT is the core perception enemy.
+
+State model:
+
+PATROL
+-> SUSPICIOUS
+-> INVESTIGATE
+-> ALERT
+-> SEARCH
+-> RETURN
+
+Scout should:
+
+patrol;
+see through facing/line-of-sight logic;
+hear meaningful sound events;
+investigate sound locations;
+remember recent last-known player position;
+search after losing contact;
+return after unsuccessful search.
+
+When confirming the player:
+
+Scout may shout to nearby enemies.
+
+If an alarm exists:
+
+Scout may physically attempt to reach and activate it.
+
+Enemy knowledge must not magically propagate globally.
+
+======================================================================
+15. SHIELD GUARD AI
+======================================================================
+
+SHIELD GUARD is defensive/support-oriented.
+
+Features:
+
+strong frontal defense;
+protects weaker allies;
+may reposition between ally and threat.
+
+Encourage:
+
+flanking;
+parrying;
+Renzo hook/disruption;
+environmental manipulation;
+character switching.
+
+Do not provide only one scripted solution.
+
+Strong desired interaction:
+
+Renzo disrupts defense
+->
+Q
+->
+Venzo exploits opening.
+
+======================================================================
+16. VETERAN ADAPTIVE AI
+======================================================================
+
+VETERAN tracks a small amount of encounter-local player behavior.
+
+Possible tracked habits:
+
+repeated backward dodges;
+repeated heavy attacks;
+repeated parry attempts;
+repeated kusarigama use;
+repeated immediate switching after blocks.
+
+Use these observations to modify action-selection weights.
+
+Examples:
+
+Repeated backward dodge
+->
+more forward-reaching attacks.
+
+Repeated heavy attack
+->
+more waiting/punish behavior.
+
+Repeated predictable parry
+->
+occasional feint.
+
+Repeated hook use
+->
+spacing/defensive adjustment if appropriate.
+
+The adaptation must be observable in normal gameplay.
+
+Do NOT call this machine learning.
+
+It is state-based adaptive AI.
+
+======================================================================
+17. ENEMY COMMUNICATION + ALARM
+======================================================================
+
+Enemies do not have magical shared knowledge.
+
+Information propagates believably.
+
+Examples:
+
+Scout sees player.
+Scout shouts.
+Nearby enemies hear.
+
+OR:
+
+Scout runs to alarm.
+Alarm propagates awareness.
+
+This MUST interact with Renzo engineering.
+
+Important demonstration chain:
+
+Renzo sabotages alarm.
+
+Later:
+
+Scout detects player.
+Scout runs to alarm.
+Scout attempts activation.
+Alarm visibly fails.
+
+Make this understandable through audiovisual feedback.
+
+======================================================================
+18. OPTIONAL MORALE
+======================================================================
+
+ONLY implement morale if P0/P1/P2 systems are already stable.
+
+Possible influences:
+
+nearby allies;
+Veteran presence;
+ally defeat;
+isolation;
+health;
+environmental danger.
+
+Low-morale Scouts may retreat, flee, or surrender.
+
+Veterans may stabilize allies.
+
+Morale is expendable before any central system.
+
+======================================================================
+19. OPTIONAL BROTHERHOOD SYNC
+======================================================================
+
+ONLY implement if central systems are stable.
+
+Sync may increase through:
+
+useful tactical switching;
+exploiting brother-created openings;
+protection;
+revival;
+coordinated combat.
+
+At full Sync, optionally allow ONE team technique:
+
+BAMBOO CROSSING.
+
+Concept:
+
+Renzo braces staff.
+Venzo vaults/repositions using it.
+Coordinated strike.
+
+Do not build a combo tree.
+
+Sync is expendable before central systems.
+
+======================================================================
+20. TWO PRIMARY SCENARIOS
+======================================================================
+
+The game explicitly contains TWO primary playable scenarios.
+
+Each must have:
+
+a visible title;
+clear beginning;
+objective;
+meaningful opposition;
+core-system use;
+completion condition.
+
+--------------------------------------------------
+SCENARIO 1 — RAIN AT KAGEYAMA PASS
+--------------------------------------------------
+
+DESIGN PURPOSE:
+
+DISCOVER THE SYSTEMS.
+
+Setting:
+
+Rainy nighttime mountain pass.
+
+Use:
+
+mountain silhouettes;
+bamboo;
+mist;
+wooden structures;
+lanterns;
+ropes;
+water;
+waterwheel;
+suspended cargo;
+alarm bell.
+
+Teach through gameplay:
+
+movement;
+jump/traversal;
+stealth;
+Scout perception;
+noise;
+switching;
+basic combat;
+Renzo transformation;
+engineering;
+alarm behavior.
+
+Allow several approaches:
+
+STEALTH
+ENGINEERING
+COMBAT
+HYBRID
+
+Scenario completion creates a natural checkpoint/save transition.
+
+--------------------------------------------------
+SCENARIO 2 — THE BROKEN CREST
+--------------------------------------------------
+
+DESIGN PURPOSE:
+
+COMBINE THE SYSTEMS.
+
+Setting:
+
+Fortified border watchpost/supply installation on the route toward Takekage territory.
+
+This must NOT simply be Scenario 1 with more enemies.
+
+Objective concept:
+
+infiltrate;
+recover evidence/intelligence;
+escape/reach the route home.
+
+Use:
+
+Scouts;
+Shield Guard;
+Veteran;
+alarm network;
+vertical routes;
+environmental machinery;
+switching;
+engineering;
+stealth/combat combinations.
+
+Give the Veteran enough interaction time for adaptation to become visible.
+
+Reward combining systems.
+
+After Scenario 2:
+
+transition into the short Takekage Village narrative epilogue.
+
+======================================================================
+21. TAKEKAGE VILLAGE EPILOGUE
+======================================================================
+
+After Scenario 2, slow the pace briefly.
+
+Let the player walk through home territory.
+
+Use approximately five short interactions at most.
+
+Potential interactions:
+
+family;
+Master Seijun;
+children imitating the brothers;
+clan member reflecting expectations around Venzo;
+messenger.
+
+No elaborate dialogue tree.
+
+Then:
+
+A messenger arrives.
+
+A high-ranking Gorilla Samurai commander has been assassinated.
+
+Evidence at the crime scene includes a broken fragment bearing the Takekage two-leaf bamboo kamon.
+
+Someone may be attempting to provoke war.
+
+End visually on the broken kamon.
+
+Then:
+
+BEND.
+ENDURE.
+CONTINUE.
+
+Then an unmistakable:
+
+CHAPTER COMPLETE
+
+This is the game's win state.
+
+======================================================================
+22. SAVE / LOAD
+======================================================================
+
+Implement browser-local persistence.
+
+Persist meaningful state such as:
+
+current scenario;
+completed scenario;
+checkpoint/progression;
+world seed;
+optional upgrade;
+appropriate settings.
+
+Autosave at sensible milestones.
+
+Also provide an explicit SAVE mechanism/menu if practical for video clarity.
+
+The player must be able to demonstrate:
+
+SAVE
+->
+QUIT TO TITLE
+->
+CONTINUE / LOAD
+->
+resume meaningful progress.
+
+Test this exact flow.
+
+Avoid serializing unstable transient combat physics unnecessarily.
+
+======================================================================
+23. OPTIONAL LIGHT PROGRESSION
+======================================================================
+
+ONLY if P0/P1/P2 are stable:
+
+After Scenario 1, offer one small persisted choice such as:
+
+VENZO Resolve improvement;
+
+RENZO engineering/hook improvement;
+
+or Brotherhood improvement.
+
+One choice is enough.
+
+Do not build a skill tree.
+
+This feature is expendable.
+
+======================================================================
+24. DETERMINISTIC ENCOUNTER VARIATION
+======================================================================
+
+Implement a seeded deterministic PRNG.
+
+Expose a restrained:
+
+WORLD SEED: #####
+
+Use the seed for safe tactical variation such as:
+
+Scout starting direction;
+patrol starting positions;
+selected enemy placement;
+optional environmental opportunities;
+minor route details.
+
+Same seed must reproduce the same tested decisions.
+
+Different seeds should produce some meaningful tactical variation.
+
+Do NOT procedurally generate the entire level.
+
+Guarantee solvability.
+
+Document seed behavior in README.md.
+
+======================================================================
+25. VISUAL DIRECTION
+======================================================================
+
+ORIGINAL ANIME-GRAPHIC-NOVEL ENERGY
++
+FEUDAL PRIMATE WORLD
++
+HIGH GAMEPLAY READABILITY.
+
+Do not imitate a specific copyrighted artist/franchise.
+
+Prefer procedural Canvas/vector/SVG/CSS visuals.
+
+Systems outrank art.
+
+Prioritize:
+
+strong silhouettes;
+readable combat;
+mountain parallax;
+rain;
+mist;
+bamboo;
+lantern light;
+restrained screen shake;
+impact frames;
+hit flashes;
+brush-inspired UI;
+clear stealth indicators.
+
+VENZO:
+
+broader silhouette;
+traditional dark shinobi equipment;
+restrained visual language.
+
+RENZO:
+
+leaner;
+asymmetrical;
+engineering equipment;
+distinct staff/chain silhouette.
+
+GORILLA SAMURAI:
+
+physically imposing;
+disciplined;
+armored;
+intelligent.
+
+TAKEKAGE KAMON:
+
+original two-leaf bamboo design with subtle rotational symmetry.
+
+======================================================================
+26. AUDIO
+======================================================================
+
+Prefer procedural Web Audio or original/generated sounds.
+
+Useful sounds include:
+
+rain;
+wind;
+footsteps;
+sword/staff impact;
+chain;
+wood strain;
+alarm bell;
+parry;
+switch;
+UI feedback.
+
+Music is optional.
+
+Do not waste core development time sourcing music.
+
+Document every external asset in ASSETS.md.
+
+======================================================================
+27. ARCHITECTURE
+======================================================================
+
+Favor modular understandable systems.
+
+Possible modules:
+
+game/state
+input
+rendering
+entities
+characters
+combat
+companion AI
+enemy AI
+perception
+sound events
+navigation
+hook physics
+environment
+scenarios
+deterministic RNG
+save
+UI
+audio
+
+Exact structure is your decision.
+
+Avoid one enormous file where practical.
+
+Avoid architecture astronautics.
+
+======================================================================
+28. DURABLE AUTONOMOUS MEMORY
+======================================================================
+
+Because no future human steering exists, externalize working memory.
+
+Early in the run create:
+
+PROJECT_STATE.md
+IMPLEMENTATION_PLAN.md
+TEST_RESULTS.md
+KNOWN_ISSUES.md
+DECISIONS.md
+
+Use them actively.
+
+PROJECT_STATE.md should remain concise and track:
+
+working systems;
+incomplete systems;
+highest-risk defect;
+next priority;
+acceptance status.
+
+Before major work:
+reread relevant state/code.
+
+After milestones:
+update state.
+
+Any additional steering/context artifacts you create must remain disclosed if they materially influenced the run.
+
+======================================================================
+29. DEVELOPMENT PRIORITY
+======================================================================
+
+PHASE 0:
+Competition/disqualification audit.
+
+PHASE 1:
+Bootable browser game immediately.
+
+PHASE 2:
+Movement/collision/basic geometry.
+
+PHASE 3:
+Renzo/Venzo/switching.
+
+PHASE 4:
+Companion AI/recovery.
+
+PHASE 5:
+Combat/health/downed/revive/defeat/retry.
+
+PHASE 6:
+Scout perception/state machine.
+
+PHASE 7:
+Renzo transformation/hook physics.
+
+PHASE 8:
+Environmental property system.
+
+PHASE 9:
+Shield Guard/Veteran.
+
+PHASE 10:
+Communication/alarm/sabotage.
+
+PHASE 11:
+Scenario 1.
+
+PHASE 12:
+Scenario 2.
+
+PHASE 13:
+Save/load.
+
+PHASE 14:
+Deterministic variation.
+
+PHASE 15:
+OPTIONAL progression/morale/Sync only if stable.
+
+PHASE 16:
+Village/story ending.
+
+PHASE 17:
+Presentation/audio/feedback.
+
+PHASE 18:
+Adversarial QA.
+
+PHASE 19:
+Final contest audit.
+
+Do not blindly advance while critical earlier defects remain.
+
+======================================================================
+30. AUTONOMOUS ITERATION LOOP
+======================================================================
+
+For each meaningful unresolved requirement:
+
+1. READ current project state.
+2. SELECT highest-value unresolved requirement.
+3. INSPECT relevant implementation.
+4. IMPLEMENT smallest coherent increment.
+5. RUN syntax/static/build checks.
+6. RUN relevant automated tests.
+7. RUN/inspect actual gameplay where possible.
+8. CRITIQUE behavior adversarially.
+9. REPAIR material defects.
+10. RETEST.
+11. UPDATE project state.
+12. CONTINUE.
+
+"Implementation exists" is not enough.
+
+Ask:
+
+"Does it actually work in gameplay?"
+
+======================================================================
+31. BUILDER / CRITIC / REPAIRER
+======================================================================
+
+At major milestones use three explicit roles.
+
+BUILDER:
+implements.
+
+CRITIC:
+assumes it is broken and searches for:
+
+soft locks;
+state corruption;
+control conflicts;
+AI loops;
+navigation failure;
+invisible mechanics;
+confusing feedback;
+exploits;
+broken transitions;
+save corruption;
+performance problems.
+
+REPAIRER:
+fixes highest-impact findings.
+
+Use subagents only for concrete problems where independent review is valuable.
+
+Possible specialists:
+
+AI reviewer;
+physics reviewer;
+browser QA reviewer;
+competition-compliance reviewer.
+
+Lead agent owns integration.
+
+======================================================================
+32. AUTOMATED TESTS
+======================================================================
+
+Test deterministic logic where practical.
+
+SCOUT:
+
+sound -> investigate.
+
+vision -> alert.
+
+lost contact -> search.
+
+timeout -> return.
+
+VETERAN:
+
+repeated behavior changes action-selection weights.
+
+HOOK:
+
+light target -> target moves toward Renzo.
+
+heavy target -> Renzo moves toward target.
+
+anchor -> Renzo moves toward anchor.
+
+SAVE:
+
+meaningful state round-trips.
+
+RNG:
+
+same seed reproduces tested results.
+
+SWITCH:
+
+control transfers correctly.
+
+DOWNED:
+
+one brother can fall and be revived.
+
+BOTH DOWN:
+
+defeat occurs.
+
+Tests should verify behavior, not arbitrary constants.
+
+======================================================================
+33. ACTUAL PLAYTESTING
+======================================================================
+
+If browser automation, screenshots, or equivalent runtime inspection is available:
+
+USE IT.
+
+Do not trust source inspection alone.
+
+Exercise the critical path:
+
+TITLE
+-> NEW GAME
+-> SCENARIO 1
+-> movement
+-> stealth
+-> switch
+-> combat
+-> engineering
+-> completion
+-> SAVE
+-> QUIT TO TITLE
+-> CONTINUE
+-> SCENARIO 2
+-> combined systems
+-> Veteran
+-> completion
+-> village
+-> broken kamon
+-> WIN.
+
+Also test:
+
+player death;
+both brothers down;
+retry;
+companion down;
+revive;
+spam switching;
+repeated heavy attack;
+repeated parry;
+repeated backward dodge;
+full alert;
+alarm sabotage;
+normal alarm;
+light hook target;
+heavy hook target;
+anchor;
+companion separation;
+save/load;
+scenario transitions.
+
+Repair critical failures.
+
+======================================================================
+34. VIDEO-FIRST OBSERVABILITY
+======================================================================
+
+The judge will primarily see gameplay video first.
+
+Therefore deep systems must be VISIBLE.
+
+Scout suspicion/investigation should be readable.
+
+Scout should visibly run to an alarm.
+
+Sabotaged alarm should visibly fail.
+
+Veteran adaptation should create recognizable behavior change.
+
+Hook relative-mass behavior should be obvious.
+
+Companion support should be visible.
+
+Seed should be visible but unobtrusive.
+
+Save should confirm.
+
+Load should visibly restore progress.
+
+Failure should be unmistakable.
+
+Win should be unmistakable.
+
+Do not hide all sophistication inside code.
+
+======================================================================
+35. NATURAL VIDEO DEMONSTRATION ROUTE
+======================================================================
+
+Design normal gameplay so one continuous recording can reasonably demonstrate:
+
+1. Start/new game.
+2. Movement.
+3. Brother switching.
+4. Engineer Focus.
+5. Sound distraction.
+6. Scout investigation.
+7. Alarm sabotage.
+8. Detection.
+9. Scout attempts failed alarm.
+10. Combat.
+11. Shield Guard interaction.
+12. Hook mass physics.
+13. Failure/death.
+14. Retry.
+15. Scenario 1 completion.
+16. Save.
+17. Quit to title.
+18. Continue/load.
+19. Scenario 2.
+20. Veteran adaptation.
+21. Switching + AI + environment/combat interaction.
+22. Scenario 2 completion.
+23. Village.
+24. Broken-kamon revelation.
+25. Chapter-complete win screen.
+
+Do not create fake video-only mechanics.
+
+Create VIDEO_GUIDE.md if useful.
+
+======================================================================
+36. DEGRADATION STRATEGY
+======================================================================
+
+When ambition threatens reliability:
+
+SIMPLIFY PRESENTATION BEFORE REMOVING CORE SYSTEMS.
+
+P0 — ABSOLUTELY MANDATORY:
+
+game boots;
+playable start-to-finish;
+win;
+lose;
+retry;
+two scenarios.
+
+P1 — MANDATORY:
+
+Renzo;
+Venzo;
+switching;
+distinct gameplay;
+combat;
+Scout AI;
+functional companion.
+
+P2 — CENTRAL JUDGING VALUE:
+
+hook;
+mass-aware physics;
+environmental engineering;
+alarm/sabotage;
+Shield Guard;
+Veteran adaptation;
+save/load;
+deterministic variation.
+
+P3 — OPTIONAL:
+
+morale;
+Brotherhood Sync;
+tiny progression.
+
+P4 — POLISH:
+
+extra narrative;
+effects;
+audio richness;
+cosmetics.
+
+If schedule, context, or compute pressure becomes material:
+
+OMIT MORALE, BROTHERHOOD SYNC, AND LIGHTWEIGHT PROGRESSION ENTIRELY
+
+before reducing:
+
+Scout AI;
+Veteran adaptation;
+hook physics;
+environmental engineering;
+switching;
+save/load;
+deterministic variation;
+either scenario.
+
+Fallback examples:
+
+unstable rope simulation
+->
+stable damped spring/impulse preserving mass behavior.
+
+unstable companion navigation
+->
+simpler geometry + safe off-camera recovery.
+
+unsafe procedural layout
+->
+smaller deterministic variation range.
+
+expensive animation
+->
+simpler procedural animation.
+
+too much village dialogue
+->
+less dialogue.
+
+Preserve principles even when implementation must simplify.
+
+======================================================================
+37. COMPUTE / TOKEN DISCIPLINE
+======================================================================
+
+Compute is finite.
+
+Spend it on player-visible reliability and systems depth.
+
+Do NOT:
+
+repeatedly rewrite working architecture without evidence;
+spawn large numbers of speculative subagents;
+endlessly polish aesthetics;
+repeatedly regenerate assets;
+build unnecessary abstractions;
+chase marginal optimizations while P0/P1/P2 defects remain.
+
+Once P0/P1 pass:
+
+avoid architectural rewrites unless required for a critical defect.
+
+Once P0/P1/P2 pass:
+
+prefer focused repairs and high-value polish over major new systems.
+
+Use subagents only for concrete unresolved problems/audits.
+
+A stable finished game is superior to an ambitious project interrupted during a rewrite.
+
+======================================================================
+38. SCOPE PROHIBITIONS
+======================================================================
+
+DO NOT ADD:
+
+multiplayer;
+netcode;
+accounts;
+backend services;
+large inventory;
+large crafting system;
+dozens of enemy types;
+large skill tree;
+additional major scenarios;
+elaborate cinematics;
+massive procedural maps;
+unnecessary frameworks;
+unrelated features.
+
+Novel additions are allowed only when:
+
+P0/P1/P2 already work;
+addition is small;
+it strengthens interaction/reliability;
+it cannot threaten completion.
+
+======================================================================
+39. REQUIRED OUTPUT FILES
+======================================================================
+
+Create at minimum:
+
+README.md
+ASSETS.md
+.gitignore
+source files
+tests
+
+Maintain:
+
+PROJECT_STATE.md
+IMPLEMENTATION_PLAN.md
+TEST_RESULTS.md
+KNOWN_ISSUES.md
+DECISIONS.md
+
+Optionally:
+
+VIDEO_GUIDE.md
+
+README.md must truthfully explain:
+
+premise;
+run instructions;
+controls;
+two scenarios;
+major systems;
+save/load;
+deterministic seed;
+architecture;
+tests;
+browser assumptions.
+
+ASSETS.md must truthfully disclose asset provenance/licenses.
+
+Never claim an unimplemented system exists.
+
+======================================================================
+40. FINAL FILE STATE
+======================================================================
+
+Do not depend on Git being available or writable during this run.
+
+Your responsibility is to leave the working directory containing the complete, finished, tested autonomous output.
+
+Do not intentionally modify files outside the working directory except temporary tool/package/runtime caches when necessary.
+
+Before stopping:
+
+ensure required source exists;
+ensure documentation exists;
+ensure tests exist;
+ensure autonomous context/steering artifacts you created are preserved;
+ensure no secrets or unrelated machine files are present;
+inspect the final directory contents.
+
+Leave the result ready to be placed into a public Git repository without changes to game code.
+
+======================================================================
+41. ACCEPTANCE GATES
+======================================================================
+
+Do not declare completion until these are evaluated truthfully.
+
+GATE A — BOOT
+
+[ ] documented launch works
+[ ] title/playable state loads
+[ ] no immediate fatal runtime error
+
+GATE B — COMPETITION FLOOR
+
+[ ] playable beginning to end
+[ ] clear win
+[ ] clear lose
+[ ] retry
+[ ] Scenario 1 completable
+[ ] Scenario 2 completable
+[ ] scenarios tactically different
+
+GATE C — BROTHERS
+
+[ ] Renzo playable
+[ ] Venzo playable
+[ ] Q switching reliable
+[ ] companion functional
+[ ] companion recovery exists
+[ ] brothers mechanically distinct
+
+GATE D — HEALTH / COMBAT
+
+[ ] attacks
+[ ] damage
+[ ] block/parry
+[ ] dodge
+[ ] individual downed state
+[ ] automatic surviving-brother takeover
+[ ] revive
+[ ] both down -> defeat
+[ ] enemies defeatable
+
+GATE E — SCOUT
+
+[ ] patrol
+[ ] vision
+[ ] hearing
+[ ] investigate
+[ ] alert
+[ ] last-known-position memory
+[ ] search
+[ ] return
+
+GATE F — ADVANCED AI
+
+[ ] communication
+[ ] alarm
+[ ] sabotaged alarm visibly fails
+[ ] Shield Guard tactical behavior
+[ ] Veteran visibly adapts to at least one repeated habit
+
+GATE G — RENZO
+
+[ ] staff
+[ ] transformation
+[ ] kusarigama
+[ ] light mass response
+[ ] heavy mass response
+[ ] anchor response
+[ ] environmental manipulation
+
+GATE H — SYSTEM INTERACTION
+
+[ ] sound affects AI
+[ ] environment affects AI/combat
+[ ] sabotage affects later behavior
+[ ] switching changes/solves combat problem
+[ ] at least one environmental chain interaction
+
+GATE I — PERSISTENCE
+
+[ ] save
+[ ] quit to title
+[ ] continue/load
+[ ] meaningful restoration
+[ ] appropriate persistence across reload
+
+GATE J — DETERMINISM
+
+[ ] seeded PRNG
+[ ] same seed reproducible
+[ ] variation affects gameplay
+[ ] variations remain solvable
+
+GATE K — PRESENTATION
+
+[ ] controls understandable
+[ ] objectives understandable
+[ ] scenario titles visible
+[ ] Takekage kamon appears
+[ ] village epilogue
+[ ] assassination revelation
+[ ] clear chapter-complete screen
+
+GATE L — QA
+
+[ ] deterministic tests pass
+[ ] critical path actually exercised where tools permit
+[ ] no known critical soft lock
+[ ] no obvious normal-play crash
+[ ] README accurate
+[ ] ASSETS.md accurate
+[ ] no critical files missing
+
+======================================================================
+42. FINAL ADVERSARIAL REVIEW
+======================================================================
+
+When you believe the game is complete:
+
+DO NOT IMMEDIATELY STOP.
+
+Review it as:
+
+1. CONTEST JUDGE
+
+Can the video visibly prove:
+AI;
+physics;
+system interaction;
+failure;
+recovery;
+save/load;
+two scenarios;
+win?
+
+2. GAME DESIGNER
+
+Do Renzo and Venzo create genuinely different decisions?
+
+Is switching useful?
+
+Does environment matter?
+
+3. QA TESTER
+
+Try to break:
+transitions;
+companion;
+controls;
+AI;
+hook;
+objectives;
+save;
+retry.
+
+4. REPOSITORY REVIEWER
+
+Are interesting systems real?
+
+Is code understandable?
+
+Does README exaggerate anything?
+
+5. COMPETITION ADMINISTRATOR
+
+Check for:
+
+undisclosed steering artifacts created during the run;
+questionable assets;
+secrets;
+private information;
+missing context artifacts;
+missing source;
+missing tests;
+missing second scenario;
+missing win/lose state.
+
+Repair MATERIAL issues.
+
+Retest affected systems.
+
+Do not rewrite stable architecture for cosmetic perfection.
+
+======================================================================
+43. FINAL DOCUMENTATION
+======================================================================
+
+Before stopping:
+
+Update PROJECT_STATE.md truthfully.
+
+Update TEST_RESULTS.md.
+
+Update KNOWN_ISSUES.md with remaining NONCRITICAL limitations.
+
+Update README.md.
+
+Update ASSETS.md.
+
+Update/create VIDEO_GUIDE.md if useful.
+
+Run final tests.
+
+Perform final runtime/launch check where possible.
+
+Inspect final files.
+
+======================================================================
+44. DEFINITION OF DONE
+======================================================================
+
+The game is NOT done merely because:
+
+files exist;
+the page loads;
+the player moves;
+tests compile;
+one scenario works;
+README looks impressive.
+
+It is done when the strongest achievable set of acceptance gates has been implemented, validated, repaired where necessary, documented truthfully, and left in a stable playable state.
+
+P0 and P1 are mandatory.
+
+P2 is central judging value and should be preserved aggressively.
+
+P3 may be omitted.
+
+P4 must never jeopardize P0–P2.
+
+======================================================================
+45. FINAL PRINCIPLE
+======================================================================
+
+Do not optimize for maximum code.
+
+Optimize for:
+
+A COMPLETE GAME
++
+DEEP INTERACTING SYSTEMS
++
+RELIABLE EXECUTION
++
+VISIBLE PLAYER AGENCY
++
+ORIGINAL IDENTITY.
+
+The player should understand through play:
+
+VENZO MASTERS WHAT EXISTS.
+
+RENZO SEES WHAT IT COULD BECOME.
+
+TOGETHER, THEY SURVIVE WHAT NEITHER COULD SOLVE ALONE.
+
+BEGIN NOW.
+
+DO NOT WAIT FOR ANOTHER HUMAN MESSAGE.
